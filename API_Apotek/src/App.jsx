@@ -14,9 +14,9 @@ function App() {
   return (
     <Router>
       {/* Navbar */}
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             API Apotek
           </a>
           <button
