@@ -49,7 +49,7 @@ export default function List() {
       <div className="d-flex justify-content-between align-items-center mb-3">
         <div>
           <h4 className="fw-bold">List Kategori</h4>
-          <p className="text-muted mb-0">Untuk melihat dan mengelola produk</p>
+          <p className="text-muted mb-0">Untuk melihat dan mengelola kategori</p>
         </div>
         <NavLink to="/kategori/create" className="btn btn-primary">
           Tambah Kategori
@@ -64,8 +64,6 @@ export default function List() {
                 <th>No</th>
                 <th>Nama Kategori</th>
                 <th>Deskripsi</th>
-                <th>Dibuat</th>
-                <th>Diperbarui</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -81,10 +79,6 @@ export default function List() {
                       overflow: "hidden",
                     }}>
                     {data.deskripsi}
-                  </td>
-                  <td>{new Date(data.created_at).toLocaleString()}</td>
-                  <td>{new Date(data.updated_at).toLocaleString()}</td>
-                  <td>
                     <button
                       onClick={() => handleDelete(data.id, data.nama)}
                       className="btn btn-outline-danger btn-sm">
