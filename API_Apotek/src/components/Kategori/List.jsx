@@ -11,14 +11,14 @@ export default function List() {
       .get("https://tugas-api-apotek.vercel.app/api/api/kategori")
       .then((response) => {
         console.log("Response:", response.data);
-        setProduk(response.data);
+        setKategori(response.data);
       })
       .catch((error) => {
         console.error("Fetch error:", error);
       });
   }, []);
 
-  const handleDelete = (id, nama) => {
+  const handleDelete = (id, nama_kategori) => {
     Swal.fire({
       title: "Periksa kembali",
       text: `Apakah kamu yakin ingin menghapus Kategori ini? ${nama_kategori}`,
@@ -78,12 +78,19 @@ export default function List() {
                       maxWidth: "450px",
                       overflow: "hidden",
                     }}>
-                    {data.deskripsi}
+                    {data.deskripsi} 
+                    </td>
+                    <td>
                     <button
-                      onClick={() => handleDelete(data.id, data.nama)}
-                      className="btn btn-outline-danger btn-sm">
+                      onClick={() => handleDelete(data.id, data.nama_kategori)}
+                      className="btn btn-outline-danger btn-sm me-2 px-3">
                       Hapus
                     </button>
+                     <NavLink
+                      to={`/kategori/edit/${data.id}`}
+                      className="btn btn-outline-warning btn-sm px-4">
+                      Edit
+                    </NavLink>
                   </td>
                 </tr>
               ))}

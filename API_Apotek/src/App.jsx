@@ -3,8 +3,8 @@ import { BrowserRouter as Router , Route, Routes, NavLink } from 'react-router-d
 
 const Home = React.lazy(() => import("./components/Home"));
 const KategoriList = React.lazy(() => import("./components/Kategori/List"));
-// const KategoriCreate = React.lazy(() => import("./components/Kategori/Create"));
-// const KategoriEdit = React.lazy(() => import("./components/Kategori/Edit"));
+const KategoriCreate = React.lazy(() => import("./components/Kategori/Create"));
+const KategoriEdit = React.lazy(() => import("./components/Kategori/Edit"));
 // const ObatList = React.lazy(() => import("./components/Obat/List"));
 // const ObatCreate = React.lazy(() => import("./components/Obat/Create"));
 // const ObatEdit = React.lazy(() => import("./components/Obat/Edit"));
@@ -55,6 +55,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/kategori" element={<KategoriList></KategoriList>}></Route>
+          <Route path="/kategori/create" element={<KategoriCreate></KategoriCreate>}></Route>
+          <Route path="/kategori/edit/:id" element={<KategoriEdit></KategoriEdit>}></Route>
         </Routes>
       </Suspense>
     </Router>
